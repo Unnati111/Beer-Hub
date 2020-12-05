@@ -1,0 +1,283 @@
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+body {
+    overflow: hidden;
+    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+  /*  background: #27273c;
+    background: url('https://images.hdqwalls.com/wallpapers/bthumb/beverage-drink-beer-cheers-5k-e4.jpg');*/
+}
+.tablediv {
+    overflow: scroll;
+    max-height: 90rem;
+    height: 80vh;
+    overflow-x: hidden;
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 80%;
+    margin: auto;
+}
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+
+.bgBottom {
+    z-index: 5;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.waveTop {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.waveMiddle {
+    background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.card {
+   width: 150vh;
+   height: 100px;
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5rem;
+}
+
+    .card h1 {
+     /*   text-align: center;*/
+    }
+
+    .card .additional {
+        position: absolute;
+        width: 100px;
+        height: 100%;
+      /*  background: linear-gradient(#dE685E, #EE786E);*/
+        background: linear-gradient( #86377b, #27273c);
+        transition: width 0.4s;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .card.green .additional {
+        background: linear-gradient(#92bCa6, #A2CCB6);
+    }
+
+
+    .card:hover .additional {
+        width: 100%;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .card .additional .user-card {
+        width: 100px;
+        height: 100%;
+        position: relative;
+        float: left;
+    }
+
+        .card .additional .user-card::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 10%;
+            right: -2px;
+            height: 80%;
+            border-left: 2px solid rgba(0,0,0,0.025);
+            */
+        }
+
+        .card .additional .user-card .level,
+        .card .additional .user-card .points {
+            top: 15%;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.75em;
+            font-weight: bold;
+            background: rgba(0,0,0,0.15);
+            padding: 0.125rem 0.75rem;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        .card .additional .user-card .points {
+            top: 85%;
+        }
+
+        .card .additional .user-card svg {
+            top: 50%;
+        }
+
+    .card .additional .more-info {
+        /*width: 300px;*/
+        /*    width:75%;*/
+        width: 50vw;
+        text-align: center;
+        float: left;
+        position: absolute;
+        left: 150px;
+        height: 100%;
+    }
+
+        .card .additional .more-info h1 {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+    .card.green .additional .more-info h1 {
+        color: #224C36;
+    }
+
+    .card .additional .coords {
+        margin: 0 1rem;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .card.green .additional .coords {
+        color: #325C46;
+    }
+
+    .card .additional .coords span + span {
+        float: right;
+    }
+
+    .card .additional .stats {
+        font-size: 2rem;
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        top: auto;
+        color: #fff;
+    }
+
+    .card.green .additional .stats {
+        color: #325C46;
+    }
+
+    .card .additional .stats > div {
+        flex: 0.5;
+        text-align: center;
+    }
+
+    .card .additional .stats i {
+        display: block;
+    }
+
+    .card .additional .stats div.title {
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .card .additional .stats div.value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+        .card .additional .stats div.value.infinity {
+            font-size: 2.5rem;
+        }
+
+    .card .general {
+        width: 500px;
+        height: 100%;
+        margin-left: 110px;
+        box-sizing: border-box;
+        padding: 1rem;
+        padding-top: 0;
+    }
+
+        .card .general .more {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.9em;
+        }
+.pagination {
+    justify-content: center;
+    align-items: center;
+}
+a{
+color: white;}
+    a:hover {
+        color: lime;
+    }
+li {
+    margin-left:5px;
+}

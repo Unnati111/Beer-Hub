@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>Beer List</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="beercss.css" />
+        <script src="beerscript.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="dirPagination.js" ></script>
+    </head>
+
+    <body>
+        <div ng-app="beerlist" ng-controller="beerlistctrl" class="container-fluid">
+            
+
+            <div style=" text-align: center; margin-top: 0.5rem;">
+                <label style="color: white;">Search</label>
+                <input type="text" ng-model="search" ng-change="searchitem(search)" />
+            </div>
+            <div>
+                <div class="tablediv">
+                   <!-- <div class="card bg-light text-dark" dir-paginate="x in beers|filter:search|itemsPerPage:20">
+
+                        <div class="card-body">   <img ng-src="{{x.image}}" style="height:30px;width:30px;" />{{x.name}}</div>
+                    </div>-->
+                        <!--   <table class="table table-hover table-bordered table-responsive-md ">
+            <thead class="thead-light ">
+                <tr>
+                    <th class="">Name</th>
+                    <th class="">Style</th>
+                    <th class="">Ounces</th>
+                    <th class="">ABV</th>
+                    <th class="">IBU</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate="x in beers|filter:search|itemsPerPage:20">
+                    <td>
+                        <img ng-src="{{x.image}}" alt="foodimage" style=" width: 20vh; height: 15vh;" />
+
+                        {{x.name}}
+                    </td>
+                    <td>{{x.style}}</td>
+                    <td>{{x.ounces}}</td>
+                    <td>{{x.abv}}</td>
+                    <td>{{x.ibu}}</td>
+
+
+                </tr>
+
+            </tbody>
+        </table>-->
+                  
+                    <!--<div class="center">-->
+               
+                        <div class="card mx-auto" dir-paginate="x in beers|filter:search|itemsPerPage:20">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <!--<div class="level center">
+                                       {{x.name}}
+                                    </div>
+                                    <div class="points center">
+                                        {{x.image}}
+                                    </div>-->
+                                    <img ng-src="{{x.image}}" style="height: 100px; width: 100px; }">
+                                </div>
+                                <div class="more-info">
+                                    <h1 style="font-size:20px;">{{x.name}}</h1>
+                                    <!--<div class="coords">
+                                        <span>Group Name</span>
+                                        <span>Jo</span>
+                                    </div>
+                                    <!--<div class="coords">
+                                        <span>Position/Role</span>
+                                        <span>City, Country</span>
+                                    </div>-->
+                                    <div class="stats">
+                                        <div>
+                                            <div class="title">Ounces</div>
+                                         <!--   <i class="fa fa-trophy"></i>-->
+                                            <div class="value">{{(x.ounces)?x.ounces:'-'}}</div>
+                                        </div>
+                                        <div>
+                                            <div class="title">IBU</div>
+                                          <!--  <i class="fa fa-gamepad"></i>-->
+                                            <div class="value">{{x.ibu?x.ibu:'-'}}</div>
+                                        </div>
+                                        <div>
+                                            <div class="title">ABV</div>
+                                          <!--  <i class="fa fa-group"></i>-->
+                                            <div class="value">{{x.abv?x.abv:'-'}}</div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="general">
+                                <h1 style="font-size: 20px; margin-top: 1vh;">{{x.name}}</h1>
+                                <p>Style-{{x.style}}</p>
+                            </div>
+                        </div>
+
+                       
+         <!--           </div>-->
+
+                </div>
+                <div style=" margin-top: 2vh;">
+                <dir-pagination-controls max-size="5"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+                    </div>
+
+
+            </div>
+
+
+    
+    </body>
+    </html>
